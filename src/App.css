@@ -9,12 +9,12 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background :radial-gradient(#282c34 70%, #313847 90%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,10 +29,13 @@
 }
 
 @keyframes App-logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  90% {
     transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
