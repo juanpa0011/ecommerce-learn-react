@@ -1,3 +1,14 @@
+main {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  height: 92vh;
+  width: 100%;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  background: #f1e7d9;
+}
+
 header {
   position: relative;
   height: 8vh;

@@ -1,0 +1,10 @@
+main {
+    position: relative;
+    display: grid;
+    height: 92vh;
+    width: 100%;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: $background--main;
+}

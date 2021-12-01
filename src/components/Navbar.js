@@ -1,6 +1,6 @@
-const Header = () => {
+const Navbar = () => {
     return (
-        <header>
+        <>
             <h1>
                 <span>D</span>&<span>D</span> Fifth Edition
             </h1>
@@ -12,8 +12,8 @@ const Header = () => {
                         <li>Cart</li>
                     </ul>
                 </nav>
-        </header>
+        </>
     )
 }
 
-export default Header;
+export default Navbar;
