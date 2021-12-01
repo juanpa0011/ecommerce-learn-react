@@ -1,15 +1,18 @@
 import React from 'react';
+// Import React to the scope
+
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// Import ReactDOM 
+
+import './scss/index.css'; // Import CSS 
+// import App from './App'; // Import APP ( Add const App = () => "Hola Mundo")
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import App from "./App"
+
+
+
+ReactDOM.render(App(), document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
