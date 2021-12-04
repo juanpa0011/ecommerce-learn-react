@@ -9,7 +9,7 @@ function App() {
       <Navbar/>
     </header>
     <main>
-      
+      <section></section>
     </main>
   </>
   

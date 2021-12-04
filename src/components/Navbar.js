@@ -1,3 +1,5 @@
+import CartWidget from './CartWidget.js'
+
 const Navbar = () => {
     return (
         <>
@@ -6,11 +8,12 @@ const Navbar = () => {
             </h1>
                 <nav>
                     <ul>
-                        <li>Sources</li>
-                        <li>Marketplace</li>
-                        <li>Media</li>
-                        <li>Cart</li>
+                        <li>Featured</li>
+                        <li>Bundles</li>
+                        <li>Sourcebooks</li>
+                        <li>Digital Dice</li>
                     </ul>
+                    < CartWidget ></CartWidget>
                 </nav>
         </>
     )
