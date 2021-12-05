@@ -5,3 +5,12 @@ $background--main: #f1e7d9;
 $background--header: #363535;
 
 $color--red--dnd: #f51414;
+
+@keyframes leanDown {
+    0% {
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}

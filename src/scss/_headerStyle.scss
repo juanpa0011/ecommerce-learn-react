@@ -117,6 +117,19 @@ header {
             flex-direction: row;
             justify-self: center;
             align-self: center;
+            &:hover{
+                &>div {
+                    &::after {
+                        background: rgba($color: $color--header--active, $alpha: 1);
+                        transition: background 0.5s ease-in-out;
+                    }
+                    p {
+                        opacity: 1;
+                        transition: opacity 0.5s ease-in-out;
+                        animation: leanDown 0.5s ease-in-out;
+                    }
+                }
+            }
 
             p {
                 cursor: pointer;
@@ -152,8 +165,7 @@ header {
                     filter: blur(5px);
                     transition: background 0.5s ease-in-out;
                 }
-                &::before {
-                    content: '0';
+                p {
                     position: absolute;
                     display: inline-block;
 
@@ -166,26 +178,17 @@ header {
 
                     background: rgba($color: #e4e4e4, $alpha: 0.5);
 
-                    width: 20px;
-                    height: 20px;
+                    width: 25px;
+                    height: 25px;
 
                     border-radius: 1rem;
 
-                    margin-left: 10px;
+                    margin-left: 7px;
                     top: 1px;
+                    transform: translateY(-10px);
 
                     opacity: 0;
                     transition: opacity 0.5s ease-in-out;
-                }
-                &:hover {
-                    &::after {
-                        background: rgba($color: $color--header--active, $alpha: 1);
-                        transition: background 0.5s ease-in-out;
-                    }
-                    &::before {
-                        opacity: 1;
-                        transition: opacity 0.5s ease-in-out;
-                    }
                 }
             }
         }

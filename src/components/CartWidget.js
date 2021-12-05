@@ -1,9 +1,11 @@
-const CartWidget = () => {
+const CartWidget = (params) => {
     return (
         <>
             <div id='header--cart'>
                 <p>Cart</p>
-                <div></div>
+                <div>
+                    <p>{params.itemNum}</p>
+                </div>
             </div>
         </>
     )
