@@ -1,0 +1,55 @@
+.counter-console {
+    background: $background--header;
+    color: rgba($color: $color--header--active, $alpha: 1.0);
+
+    display: grid;
+    position: relative;
+
+    
+    padding: 10px 10px;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+    justify-content: center;
+    >button {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+
+        background: $background--header;
+        color: $color--bronze--noactive;
+
+        &:hover {
+            background: $color--red--dnd;
+            color: white;
+        }
+    }
+    >button:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    >button:nth-child(2) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    >div {
+        width: 100%;
+        height: 100%;
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        color: $background--header;
+
+        background: $background--main;
+
+        align-self: center;
+        justify-self: center;
+    }
+}
