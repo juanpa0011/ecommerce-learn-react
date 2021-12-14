@@ -5,24 +5,45 @@ main {
     width: 100%;
 
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 100%);
 
     background: $background--main;
 
+    // SHOW FEATURED PRODUCTS STYLES.
     >.container--featured {
         display: grid;
         position: relative;
 
         grid-column-start: 1;
         grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
 
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
 
         padding: 50px 10px;
         gap: 10px;
-        margin: 0px 5%;
+        margin: 20px 5%;
         height: 80vh;
 
+        >h2 {
+            position: absolute;
+            content: '';
+            width: fit-content;
+            height: fit-content;
+            inset: 1px;
+            text-align: center;
+            font-weight: bold;
+            color: $color--header--active;
+            background: $background--header;
+            margin-left: 35%;
+            padding: 2px 10px;
+            border-radius: 1rem;
+            border: 1px $color--red--dnd double;
+            box-shadow: 5px 4px 20px black;
+
+        }
         >div {
             overflow: hidden;
             &::after {
@@ -149,6 +170,11 @@ main {
                     background: $color--red--dnd;
                 }
             }
+            .no-stock--button {
+                background: $color--header--noactive;
+            }
         }
     }
+
+    // CATALOG OF DIVERSITY - SHOW UP TO 20 ITEMS ???
 }

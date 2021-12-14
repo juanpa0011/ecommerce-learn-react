@@ -13,6 +13,7 @@ function ItemListContainer () {
             featured: true,
             img: "./img/fizbantreasury.png",
             price: 29.99,
+            stock: 3
         },
         {
             id: 2,
@@ -26,10 +27,9 @@ function ItemListContainer () {
             featured: true,
             img: "https://placeholder.com/150",
             price: 29.99,
+            stock: 0
         }
     ]
-
-    console.log(list)
 
     return list;
 }
