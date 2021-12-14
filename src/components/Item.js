@@ -12,7 +12,7 @@ const Item = (params) =>{
                 <p>{item.description.short}</p>
                 <h4>Price: ${item.price}</h4>
                 <div className="folder--item">
-                    <button>Find out more</button>
+                    <button>Show more</button>
                 </div>
             </div>
     </div>
