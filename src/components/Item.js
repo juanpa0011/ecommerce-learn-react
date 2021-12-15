@@ -2,8 +2,6 @@
 const Item = (params) =>{
 
     const item = params.item;
-
-    console.log(item);
     
     return <div>
             <div className="container--item">
