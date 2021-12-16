@@ -1,17 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import ItemCounter from "./ItemCounter";
+import list from "../database/data"
 
 
-const Featured = (params) => {
+const Featured = () => {
 
-    const list = params.list; // Secure params on List array
+    const [featured, setList] = useState([])
+    const [loading, setloading] = useState(false)
+
+    useEffect(() => {
+        const promise = getItems()
+        promise.then((json) => {
+            setList(json);
+        })
+    }, [])
+
+    const getItems = () => {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(
+                    list.filter(function (element) { return element.featured == true})
+                )
+            }, 3000);
+        })
+        return promise;
+    }
     
-    const featuredList = list.filter(function (element) { return element.featured == true}); // Secure only FEATURED elements of Array
-
     // Render all featured elements as intended
     return <>
         <h2>Featured Items of the Month</h2>
-        {featuredList.map((element, index) => {
+        {featured.map((element, index) => {
             return <div>
                 
                 <img href={element.img}></img>

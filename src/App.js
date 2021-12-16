@@ -4,7 +4,6 @@ import './App.css';
 import Navbar from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer';
 import Featured from './components/Featured';
-import ItemList from './components/ItemList';
 
 
 function App() {
@@ -16,10 +15,10 @@ function App() {
     </header>
     <main>
     <section className="container--featured">
-      <Featured list={ItemListContainer()}/>
+      <Featured/>
     </section>
     <section className="container--catalog">
-      <ItemList list={ItemListContainer()}></ItemList>
+      <ItemListContainer></ItemListContainer>
     </section>
     </main>
   </>
