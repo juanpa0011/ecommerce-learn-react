@@ -10,6 +10,7 @@ const list = [
             "Utilize a rich hoard of tools and information for Dungeon Masters to design Dragon themed encounters, adventures & campaigns across the worlds of D&D, with new dragon lair maps and details on 20 different kinds of dragons.", "Presents a complete dragon bestiary and introduces a variety of new dragons and dragon-related creatures, including aspects of the dragon gods, dragon minions, and more to use in the Encounter builder and Combat Tracker"]
         },
         featured: true,
+        category: "sourcebook",
         img: "./img/fizbantreasury.png",
         price: 29.99,
         stock: 3
@@ -24,9 +25,40 @@ const list = [
             list: ["Get all the rules needed to create, level up and start adventuring with your D&D characters with helpful tooltips", "Unlocks 28 subclasses, 10 backgrounds, and 2 subraces for use in the guided Character Builder", "Adds 57 spells and 66 feats - easily know what each power does with just a click of your character sheet"]
         },
         featured: true,
+        category: "sourcebook",
         img: "https://placeholder.com/150",
         price: 29.99,
         stock: 0
+    },
+    {
+        id: 3,
+        name: "The Everlasting Rime",
+        description: {
+            short: "Beware! Covered in shards of ice, this digital dice set only thaws to reveal the success of your roll or betray the secret you hold close.",
+            full: "Beware! The frozen tundra, from which these dice call home, brings harsh blizzards and unyielding temperatures. Be careful when rolling, the spikes are frozen solid and will freeze your blood.",
+            h4: "Extra life",
+            list: ""
+        },
+        featured: true,
+        category: "digitaldice",
+        img: "https://placeholder.com/150",
+        price: 5.99,
+        stock: 2
+    },
+    {
+        id: 4,
+        name: "Dice of Enlightenment",
+        description: {
+            short: "in seeking the path to enlightenment, you discovered these artifacts glowing with the promise of knowledge. You're not sure if they'll help you uncover hidden truths, but each roll offers that chance.",
+            full: "Beware! The frozen tundra, from which these dice call home, brings harsh blizzards and unyielding temperatures. Be careful when rolling, the spikes are frozen solid and will freeze your blood.",
+            h4: "Amazing animation!",
+            list: ["Critical Animation: Magical knowledge breaks through the arched windows when the roller hits a 20.", "Removal Animation: The dice crumble into ruins after the roll has been made.", "Unique Sounds: Tower bells sound every time a roll is made." ]
+        },
+        featured: true,
+        category: "digitaldice",
+        img: "https://placeholder.com/150",
+        price: 5.99,
+        stock: 2
     }
 ]
 

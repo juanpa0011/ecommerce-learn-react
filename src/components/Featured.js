@@ -26,13 +26,23 @@ const Featured = () => {
         })
         return promise;
     }
+
+    const sliceItems = () => {
+        const randNum = Math.floor(Math.random() * 10);
+        if (randNum > 4) {
+            const twoFeatured = featured.slice(0,2);
+            return twoFeatured;
+        } else {
+            const twoFeatured = featured.slice(randNum,randNum+2);
+            return twoFeatured;
+        }
+    }
     
     // Render all featured elements as intended
     return <>
         <h2>Featured Items of the Month</h2>
-        {featured.map((element, index) => {
+        {featured.slice(0,2).map((element, index) => {
             return <div>
-                
                 <img href={element.img}></img>
                 <h2>{element.name}</h2>
                 <h3>{element.description.short}</h3>

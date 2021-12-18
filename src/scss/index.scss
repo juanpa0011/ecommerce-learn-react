@@ -3,12 +3,23 @@
 @import "headerStyle";
 @import "counterStyle";
 @import "containerCatalogStyle";
+@import "categorieStyle";
+@import "detailsProduct";
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a {
+    color: white;
+    outline: none;
+    text-decoration: none;
+    &:visited {
+        color: white;
+    }
 }
 
 button {
