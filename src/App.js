@@ -16,7 +16,7 @@ function App() {
   const links = [
     { href: '/category/featured', name: "featured", type: "featured"},
     { href: '/category/bundles', name: "bundles", type: "bundles"},
-    { href: '/category/sourcebooks', name: "sourcebooks", type: "sourcebooks"},
+    { href: '/category/sourcebook', name: "sourcebooks", type: "sourcebooks"},
     { href: '/category/digitaldice', name: "digitaldice", type: "digitaldice"},
   ]
 

@@ -14,13 +14,18 @@ const CategoryShow = (params) => {
         promise.then((json) => {
             setList(json);
         })
-    }, [])
+    }, [categoryType])
 
     const getItems = () => {
         const promise = new Promise((resolve, reject) => {
             setTimeout(() => {
+                
                 resolve(
-                    list.filter(function (element) { return element.featured == true})
+                    list.filter(function (element) { 
+                        console.log(element.category)
+                        console.log(categoryType.type)
+                        return element.category == categoryType.type
+                    })
                 )
             }, 3000);
         })
@@ -39,6 +44,8 @@ const CategoryShow = (params) => {
         title = "Sourcebooks"
     }
 
+
+    console.log(items)
     return (
         <section className="container--category-style">
             <h2>Welcome to {title}</h2>

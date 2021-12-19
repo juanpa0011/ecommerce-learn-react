@@ -37,7 +37,7 @@ const list = [
             short: "Beware! Covered in shards of ice, this digital dice set only thaws to reveal the success of your roll or betray the secret you hold close.",
             full: "Beware! The frozen tundra, from which these dice call home, brings harsh blizzards and unyielding temperatures. Be careful when rolling, the spikes are frozen solid and will freeze your blood.",
             h4: "Extra life",
-            list: ""
+            list: [""]
         },
         featured: true,
         category: "digitaldice",
@@ -54,7 +54,7 @@ const list = [
             h4: "Amazing animation!",
             list: ["Critical Animation: Magical knowledge breaks through the arched windows when the roller hits a 20.", "Removal Animation: The dice crumble into ruins after the roll has been made.", "Unique Sounds: Tower bells sound every time a roll is made." ]
         },
-        featured: true,
+        featured: false,
         category: "digitaldice",
         img: "https://placeholder.com/150",
         price: 5.99,
