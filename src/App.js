@@ -8,6 +8,7 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Featured from './components/Featured';
 import { useState } from 'react';
 import CategoryShow from './components/CategoryShow';
+import CartList from './components/CartList';
 
 
 function App() {
@@ -42,8 +43,9 @@ function App() {
         <Route path="/product/:id" element={
           <ItemDetailContainer/>
         } />
-        <Route path="/cart" element={<>
-        </>} />
+        <Route path="/cart" element={
+          <CartList/>
+        } />
       </Routes>
     </main>
   </Router>
