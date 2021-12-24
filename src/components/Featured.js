@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
 import ItemCounter from "./ItemCounter";
-import list from "../database/data"
 
 
-const Featured = () => {
+const Featured = ({list}) => {
 
     const [featured, setList] = useState([])
     const [loading, setloading] = useState(false)

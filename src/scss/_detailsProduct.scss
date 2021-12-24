@@ -137,6 +137,9 @@
                 &:hover {
                     background: $color--red--dnd;
                 }
+                &:disabled {
+                    background: grey;
+                }
     }
     .no-stock--button {
         background: $color--header--noactive;

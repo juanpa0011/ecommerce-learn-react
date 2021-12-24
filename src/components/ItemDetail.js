@@ -23,7 +23,7 @@ const ItemDetail = (params) => {
                 <p>Price ${item.price}</p>
                 <ItemCounter item={item}></ItemCounter>
             </div>
-        <button>Add to your backpack</button>
+        <button disabled>Add to your backpack</button>
     </>)
 }
 

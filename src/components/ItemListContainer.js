@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 
 
 import ItemList from "./ItemList";
-import list from "../database/data"
 
 
 // IMPORTAR DATA ( ITEMS??) DE UN ARCHIVO DATA ( DATA WAREHOUSE)
 
 // CONST PRODUCTS = DATA. ANCLAR LA INFORMACION A UNA VARIABLE.
 
-function ItemListContainer () {
+function ItemListContainer ({list}) {
 
     // CREAR DOS ESTADOS USE STATES
 

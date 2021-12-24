@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
-import list from "../database/data"
-import ItemCounter from "./ItemCounter";
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({list}) => {
 
     const [item, setItem] = useState([])
     const [loading, setloading] = useState(false)

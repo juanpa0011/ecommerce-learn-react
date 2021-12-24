@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import list from "../database/data"
 
-const CategoryShow = (params) => {
+const CategoryShow = ({list}) => {
 
     const categoryType = useParams()
 
@@ -22,8 +21,6 @@ const CategoryShow = (params) => {
                 
                 resolve(
                     list.filter(function (element) { 
-                        console.log(element.category)
-                        console.log(categoryType.type)
                         return element.category == categoryType.type
                     })
                 )
@@ -43,9 +40,6 @@ const CategoryShow = (params) => {
     } else {
         title = "Sourcebooks"
     }
-
-
-    console.log(items)
     return (
         <section className="container--category-style">
             <h2>Welcome to {title}</h2>

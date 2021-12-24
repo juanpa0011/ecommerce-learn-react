@@ -9,6 +9,7 @@ import Featured from './components/Featured';
 import { useState } from 'react';
 import CategoryShow from './components/CategoryShow';
 import CartList from './components/CartList';
+import list from "./database/data"
 
 
 function App() {
@@ -30,21 +31,21 @@ function App() {
       <Routes>
         <Route path="/" element={<>
           <section section className="container--featured">
-            <Featured/>
+            <Featured list={list}/>
           </section>
           <section className="container--catalog">
-            <ItemListContainer></ItemListContainer>
+            <ItemListContainer list={list}></ItemListContainer>
           </section>
           </>
         }/>
         <Route path="/category/:type" element={
-          <CategoryShow></CategoryShow>
+          <CategoryShow list={list}></CategoryShow>
         } />
         <Route path="/product/:id" element={
-          <ItemDetailContainer/>
+          <ItemDetailContainer list={list}/>
         } />
         <Route path="/cart" element={
-          <CartList/>
+          <CartList list={list}/>
         } />
       </Routes>
     </main>
