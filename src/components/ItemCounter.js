@@ -36,16 +36,16 @@ const ItemCounter = ({addItem,item}) => {
         )
     } else {
         return (<>
-            <div className="container--values">
+        <div className="container--values">
                 <p>Price ${item.price}</p>
-        <div className="counter-console">
-            <div className='noStock'>SOLD OUT</div>
-            <button onClick={reduceCounter}>-</button>
-            <button onClick={sumCounter}>+</button>
+            <div className="counter-console">
+                <div className='noStock'>SOLD OUT</div>
+                <button onClick={reduceCounter}>-</button>
+                <button onClick={sumCounter}>+</button>
             <div>{number}</div>
             </div>
-        <button disabled>Add to your backpack</button>
         </div>
+        <button disabled>Add to your backpack</button>
         </>)
     }
 }

@@ -1,4 +1,7 @@
-import Fizban from '../../src/assets/img/fizbantreasury.png'
+import Fizban from '../assets/img/fizbantreasury.png'
+import playerhandbook from '../assets/img/playershandbook.jpg'
+import everlasting from '../assets/img/everlasting-rime-cover.jpg'
+import englightment from '../assets/img/enlightenment-cover.png'
 
 const list = [
     {
@@ -29,7 +32,7 @@ const list = [
         },
         featured: true,
         category: "sourcebook",
-        img: "https://placeholder.com/150",
+        img: playerhandbook,
         price: 29.99,
         stock: 0
     },
@@ -44,7 +47,7 @@ const list = [
         },
         featured: true,
         category: "digitaldice",
-        img: "https://placeholder.com/150",
+        img: everlasting,
         price: 5.99,
         stock: 2
     },
@@ -59,7 +62,7 @@ const list = [
         },
         featured: false,
         category: "digitaldice",
-        img: "https://placeholder.com/150",
+        img: englightment,
         price: 5.99,
         stock: 2
     }

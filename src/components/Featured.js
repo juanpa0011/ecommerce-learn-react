@@ -42,14 +42,10 @@ const Featured = ({list, carting}) => {
         <h2>Featured Items of the Month</h2>
         {featured.slice(0,2).map((element, index) => {
             return <div>
-                <img href={element.img}></img>
+                <img src={element.img}></img>
                 <h2>{element.name}</h2>
                 <h3>{element.description.short}</h3>
-                <div className="container--values">
-                    <p>${element.price}</p>
                     <ItemCounter item={element}></ItemCounter>
-                </div>
-                <button>Add to your backpack</button>
             </div>
         })}
     </>

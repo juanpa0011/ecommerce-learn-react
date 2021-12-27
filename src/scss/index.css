@@ -223,6 +223,10 @@ main > .container--featured > div > button:hover {
   background: #f51414;
 }
 
+main > .container--featured > div > button:disabled {
+  background: grey;
+}
+
 main > .container--featured > div .no-stock--button {
   background: #b3b3b3;
 }
