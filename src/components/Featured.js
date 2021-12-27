@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ItemCounter from "./ItemCounter";
 
 
-const Featured = ({list}) => {
+const Featured = ({list, carting}) => {
 
     const [featured, setList] = useState([])
     const [loading, setloading] = useState(false)

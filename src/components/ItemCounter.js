@@ -1,38 +1,52 @@
 import { useState } from "react";
 
-const ItemCounter = (params) => {
+const ItemCounter = ({addItem,item}) => {
 
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState(1);
 
     const sumCounter = () => {
-        if (number == params.item.stock) {
-            setNumber(params.item.stock)
+        if (number == item.stock) {
+            setNumber(item.stock)
         } else {
             setNumber(number + 1)
         }
     }
 
     const reduceCounter = () => {
-        if (number == 0) {
-            setNumber(0)
+        if (number == 1) {
+            setNumber(1)
         } else {
             setNumber(number - 1)
         }
     }
 
-    if (params.item.stock != 0) {
-        return <div className="counter-console">
-            <button onClick={reduceCounter}>-</button>
-            <button onClick={sumCounter}>+</button>
-            <div>{number}</div>
+
+    if (item.stock != 0) {
+        return (<>
+        <div className="container--values">
+            <p>Price ${item.price}</p>
+            <div className="counter-console">
+                <button onClick={reduceCounter}>-</button>
+                <button onClick={sumCounter}>+</button>
+                <div>{number}</div>
+            </div>
         </div>
+        <button onClick={(e) => addItem(item.id,number)}>Add to your backpack</button>
+        </>
+        )
     } else {
-        return <div className="counter-console">
+        return (<>
+            <div className="container--values">
+                <p>Price ${item.price}</p>
+        <div className="counter-console">
             <div className='noStock'>SOLD OUT</div>
             <button onClick={reduceCounter}>-</button>
             <button onClick={sumCounter}>+</button>
             <div>{number}</div>
+            </div>
+        <button disabled>Add to your backpack</button>
         </div>
+        </>)
     }
 }
 

@@ -1,3 +1,5 @@
+import Fizban from '../../src/assets/img/fizbantreasury.png'
+
 const list = [
     {
         id: 1,
@@ -11,7 +13,8 @@ const list = [
         },
         featured: true,
         category: "sourcebook",
-        img: "./img/fizbantreasury.png",
+        img: Fizban,
+        
         price: 29.99,
         stock: 3
     },

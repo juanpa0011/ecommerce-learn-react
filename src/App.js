@@ -6,13 +6,11 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Featured from './components/Featured';
-import { useState } from 'react';
 import CategoryShow from './components/CategoryShow';
 import CartList from './components/CartList';
 import list from "./database/data"
 
-
-function App() {
+const App = () => {
   // eslint-disable-next-line
 
   const links = [
@@ -21,11 +19,10 @@ function App() {
     { href: '/category/sourcebook', name: "sourcebooks", type: "sourcebooks"},
     { href: '/category/digitaldice', name: "digitaldice", type: "digitaldice"},
   ]
-
   return ( 
   <Router>
     <header>
-      <Navbar links={links}/>
+      <Navbar links={links}/> 
     </header>
     <main>
       <Routes>
