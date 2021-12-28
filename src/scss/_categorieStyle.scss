@@ -51,14 +51,37 @@
             background: white;
             box-shadow: 1px 4px 20px black;
             img {
-                width: 100%;
-                height: 100%;
+                width: 90%;
+                height: 90%;
                 padding: 5px 20px;
             }
             >div:nth-child(2) {
                 overflow-y: scroll;
                 &::-webkit-scrollbar {
                     display: none;
+                }
+            }
+            .container--values {
+                >div {
+                    display: grid;
+                    margin-top: 50px;
+                    >button {
+                        background: $background--header;
+                        height: 55px;
+                        align-self: center;
+                        &:hover {
+                            >a {
+                                color: $color--bronze--active;
+                                transition: 0.5s ease-in color;
+                            }
+                        }
+                        >a {
+                            transition: 0.5s ease-in color;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: $color--bronze--noactive;
+                        }
+                    }
                 }
             }
         }

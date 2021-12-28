@@ -647,6 +647,11 @@ header nav div div p {
 
 .container--catalog .folder--catalog > div > .container--item > p {
   margin-top: 10px;
+  overflow-y: scroll;
+}
+
+.container--catalog .folder--catalog > div > .container--item > p::-webkit-scrollbar {
+  display: none;
 }
 
 .container--catalog .folder--catalog > div > .container--item > h4 {
@@ -812,8 +817,8 @@ header nav div div p {
 }
 
 .container--category-style > .container--central-grid > div img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   padding: 5px 20px;
 }
 
@@ -823,6 +828,34 @@ header nav div div p {
 
 .container--category-style > .container--central-grid > div > div:nth-child(2)::-webkit-scrollbar {
   display: none;
+}
+
+.container--category-style > .container--central-grid > div .container--values > div {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 50px;
+}
+
+.container--category-style > .container--central-grid > div .container--values > div > button {
+  background: #363535;
+  height: 55px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container--category-style > .container--central-grid > div .container--values > div > button:hover > a {
+  color: #ffb85b;
+  -webkit-transition: 0.5s ease-in color;
+  transition: 0.5s ease-in color;
+}
+
+.container--category-style > .container--central-grid > div .container--values > div > button > a {
+  -webkit-transition: 0.5s ease-in color;
+  transition: 0.5s ease-in color;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #d1984e;
 }
 
 .ItemListed {

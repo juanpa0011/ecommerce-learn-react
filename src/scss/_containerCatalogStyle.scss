@@ -96,6 +96,10 @@
                 }
                 >p {
                     margin-top: 10px;
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
                 >h4 {
                     margin-top: 10px;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 
 const CategoryShow = ({list}) => {
 
@@ -47,14 +47,16 @@ const CategoryShow = ({list}) => {
                 {/* mapping data from database (use promise as intended soon.) */}
                 {items.map((element, index) => {
                     return <div>
-                
-                    <img href={element.img}></img>
+                    <img src={element.img}></img>
                     <div>
                         <h2>{element.name}</h2>
                         <p>{element.description.short}</p>
                     </div>
                     <div className="container--values">
-                        <p>${element.price}</p>
+                        <p>Price: ${element.price}</p>
+                        <div className="folder--item">
+                            <button>  <NavLink to ={'/product/' + element.id} >Show more</NavLink> </button>
+                        </div>
                     </div>
                 </div>
                 })}
