@@ -35,11 +35,10 @@ const CategoryShow = ({list}) => {
         title = "Digital dice"
     } else if (categoryType.type == "bundles") {
         title = "Bundles"
-    } else if (categoryType.type == "featured") {
-        title = "Featured"
     } else {
         title = "Sourcebooks"
     }
+
     return (
         <section className="container--category-style">
             <h2>Welcome to {title}</h2>

@@ -14,7 +14,6 @@ const App = () => {
   // eslint-disable-next-line
 
   const links = [
-    { href: '/category/featured', name: "featured", type: "featured"},
     { href: '/category/bundles', name: "bundles", type: "bundles"},
     { href: '/category/sourcebook', name: "sourcebooks", type: "sourcebooks"},
     { href: '/category/digitaldice', name: "digitaldice", type: "digitaldice"},

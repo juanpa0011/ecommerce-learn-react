@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import ItemCounter from "./ItemCounter";
+import { NavLink } from "react-router-dom";
 
 
 const Featured = ({list, carting}) => {
@@ -45,7 +45,9 @@ const Featured = ({list, carting}) => {
                 <img src={element.img}></img>
                 <h2>{element.name}</h2>
                 <h3>{element.description.short}</h3>
-                    <ItemCounter item={element}></ItemCounter>
+                <button>
+                    <NavLink to ={'/product/' + element.id} >Show more</NavLink>
+                </button>
             </div>
         })}
     </>
