@@ -1,14 +1,17 @@
 
 import './App.css';
 
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+
+
 import Navbar from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Featured from './components/Featured';
 import CategoryShow from './components/CategoryShow';
 import CartList from './components/CartList';
 import list from "./database/data"
+import { CustomProvider } from './components/CartContext';
 
 const App = () => {
   // eslint-disable-next-line
@@ -19,7 +22,8 @@ const App = () => {
     { href: '/category/digitaldice', name: "digitaldice", type: "digitaldice"},
   ]
   return ( 
-  <Router>
+  <CustomProvider>
+    <Router>
     <header>
       <Navbar links={links}/> 
     </header>
@@ -46,6 +50,8 @@ const App = () => {
       </Routes>
     </main>
   </Router>
+  </CustomProvider>
+  
   )
 }
 
