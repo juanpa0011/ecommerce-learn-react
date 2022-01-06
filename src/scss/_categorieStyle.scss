@@ -62,6 +62,10 @@
                 }
             }
             .container--values {
+                >p {
+                    padding-left: 5px;
+                    padding-top: 10px;
+                }
                 >div {
                     display: grid;
                     margin-top: 50px;
