@@ -1,21 +1,22 @@
 import { useState } from "react/cjs/react.development"
 import ItemCounter from "./ItemCounter"
 import { NavLink } from "react-router-dom"
+import { useEnviro } from "./CartContext";
 
 const ItemDetail = ({item}) => {
 
     // CREATE HOOK FOR A VARIABLE ARRAY TO STORE AN ITEM ACCORDING TO WHAT IS GIVEN IN ITEMCOUNTER
 
     const [itemArray, setItemArray] = useState([])
+    const {addToCart} = useEnviro();
 
-    const addItem = (id, quantity) => {
+    const addItem = (item, quantity) => {
 
-        const newItem = {id: item.id, quantity: quantity}
-
+        const newItem = {item: item, quantity: quantity}
         const copy = [...itemArray, newItem];
-        setItemArray(copy);
 
-        console.log(copy);
+        addToCart(newItem); // Add to Context for further use.
+        setItemArray(copy); // Add to props sent from Father Component
     }
 
     if (item == undefined) {
@@ -23,7 +24,6 @@ const ItemDetail = ({item}) => {
             <div className="loading">Loading...</div>
         </>)
     }
-    console.log(itemArray.length)
 
     if (itemArray.length == 0) {
         return (<>

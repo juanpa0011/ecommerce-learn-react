@@ -368,7 +368,21 @@ header nav ul li::after {
           filter: blur(2px);
 }
 
-header nav div {
+header nav > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  z-index: 50;
+}
+
+header nav > a > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,13 +395,13 @@ header nav div {
       align-self: center;
 }
 
-header nav div:hover > div::after {
+header nav > a > div:hover > div::after {
   background: #f3f3f3;
   -webkit-transition: background 0.5s ease-in-out;
   transition: background 0.5s ease-in-out;
 }
 
-header nav div:hover > div p {
+header nav > a > div:hover > div p {
   opacity: 1;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
@@ -395,13 +409,13 @@ header nav div:hover > div p {
           animation: leanDown 0.5s ease-in-out;
 }
 
-header nav div p {
+header nav > a > div p {
   cursor: pointer;
   margin-top: 10px;
   margin-right: 5px;
 }
 
-header nav div div {
+header nav > a > div div {
   content: '';
   display: inline-block;
   position: relative;
@@ -413,7 +427,7 @@ header nav div div {
   cursor: pointer;
 }
 
-header nav div div::after {
+header nav > a > div div::after {
   content: '';
   position: absolute;
   display: inline-block;
@@ -427,7 +441,7 @@ header nav div div::after {
   transition: background 0.5s ease-in-out;
 }
 
-header nav div div p {
+header nav > a > div div p {
   position: absolute;
   display: inline-block;
   color: black;
@@ -1108,8 +1122,86 @@ header nav div div p {
 .container--cart .table--item {
   overflow-x: hidden;
   overflow-y: scroll;
-  -ms-grid-rows: (1fr)[auto-fill];
-      grid-template-rows: repeat(auto-fill, 1fr);
+  -ms-grid-rows: (125px)[auto-fill];
+      grid-template-rows: repeat(auto-fill, 125px);
+}
+
+.container--cart .table--item .item--holder {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1.5fr;
+      grid-template-columns: 0.5fr 1.5fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.container--cart .table--item .item--holder h4 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container--cart .table--item .item--holder img {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  width: 85px;
+  margin: 5px 5px 5px 25px;
+}
+
+.container--cart .table--item .item--pricing {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: flex-start;
+  margin-left: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container--cart .table--item .item--pricing p {
+  font-weight: bold;
+}
+
+.container--cart .table--item button {
+  width: 80%;
+  height: 50px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border: 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #363535;
+  color: white;
+}
+
+.container--cart .table--item button:hover {
+  background-color: #f51414;
+}
+
+.container--cart .table--item a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+  margin-left: 40px;
 }
 
 .container--cart .table--item::-webkit-scrollbar {
@@ -1128,7 +1220,7 @@ header nav div div p {
   grid-column-end: -1;
   -ms-grid-row: 1;
       grid-row-start: 1;
-  grid-row-start: -1;
+  grid-row-start: 3;
 }
 
 .container--cart .table--header {
@@ -1205,6 +1297,26 @@ header nav div div p {
   width: 150px;
   height: 300px;
   opacity: 0.5;
+}
+
+.container--cart .table--footer button {
+  width: 80%;
+  height: 50px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border: 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #f51414;
+  color: white;
+}
+
+.container--cart .table--footer button:hover {
+  background-color: #f51414;
 }
 
 * {

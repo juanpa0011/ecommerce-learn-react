@@ -22,7 +22,9 @@ const Navbar = ({links}) => {
                         return <li><NavLink key={element.id} to={element.href}> {captalizeElementsString(element.name)} </NavLink></li>
                     })}
                 </ul>
-                < CartWidget itemNum='0' ></CartWidget>
+                <NavLink to='/cart'>
+                    < CartWidget itemNum='0' ></CartWidget>
+                </NavLink>
             </nav>
         </>
     )

@@ -9,8 +9,6 @@ const CartWidget = (params) => {
 
     const {cartWeight} = useEnviro();
 
-    console.log(cartWeight)
-
     if (cartWeight>9) {
         return (
         

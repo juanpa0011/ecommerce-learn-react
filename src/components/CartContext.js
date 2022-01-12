@@ -10,24 +10,48 @@ export const useEnviro = () => {  //Custom Hook
 }
 
 export const CustomProvider = ({children}) => { // Being used currently as Context.
-    const [cartWeight, setCartWeight] = useState(10)
+    const [cartWeight, setCartWeight] = useState(0)
     const [cart, setCart] = useState([])
 
-    const removeItemCart = (id) => { // Remove item from cart - not cart weight. 
+    const removeItemCart = (id, quantity) => { // Remove item from cart - not cart weight. 
+        const cart_copy = cart.filter(element => element.product.item.id != id)
+        console.log(cart_copy)
+        console.log(id)
+        setCart(cart_copy)
+        setCartWeight(cartWeight - quantity)
 
     }
+
     const emptyCart = () => { // Empty cart, all items removed. WARNING: CartWeight should also be affected.
         setCart([])
+        setCartWeight(0)
     }
-    const addToCart = (product, amount) => { // Element to add must come from a return statement.
-        if (isInCart()) {
-            
-        } else {
-            
-        }
-    }
-    const isInCart = (id) => { // Find item inside cart.
 
+    const addToCart = (product) => { // Element to add must come from a return statement.
+        const id = product.item.id;
+        //const exist = cart.find((element) => element.product.id == product.id);
+        console.log(cart)
+        if (isInCart(id)) {
+
+            const cart_copy = [...cart]
+            let match = cart_copy.find((x) => x.product.item.id === id)
+            match.product.quantity = match.product.quantity + product.quantity
+            setCart(cart_copy)
+
+        } else {
+            setCart([...cart, {product}])
+        }
+        setCartWeight(cartWeight + product.quantity)
+    }
+    
+    const isInCart = (id) => { // Find item inside cart.
+        const search = cart.filter(x => x.product.item.id == id) 
+        
+        if (search.length > 0) {
+            return true
+        } else {
+            return false
+        }
     }
 
     const contextValues = {

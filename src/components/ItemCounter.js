@@ -3,7 +3,6 @@ import { useState } from "react";
 const ItemCounter = ({addItem,item}) => {
 
     const [number, setNumber] = useState(1);
-
     const sumCounter = () => {
         if (number == item.stock) {
             setNumber(item.stock)
@@ -11,7 +10,6 @@ const ItemCounter = ({addItem,item}) => {
             setNumber(number + 1)
         }
     }
-
     const reduceCounter = () => {
         if (number == 1) {
             setNumber(1)
@@ -19,8 +17,6 @@ const ItemCounter = ({addItem,item}) => {
             setNumber(number - 1)
         }
     }
-
-
     if (item.stock != 0) {
         return (<>
         <div className="container--values">
@@ -31,7 +27,7 @@ const ItemCounter = ({addItem,item}) => {
                 <div>{number}</div>
             </div>
         </div>
-        <button onClick={(e) => addItem(item.id,number)}>Add to your backpack</button>
+        <button onClick={(e) => addItem(item,number)}>Add to your backpack</button>
         </>
         )
     } else {
