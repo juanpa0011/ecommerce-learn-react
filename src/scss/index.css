@@ -702,22 +702,26 @@ header nav > a > div div p {
           align-items: center;
 }
 
-.container--catalog .folder--catalog > div > .container--item > .folder--item > button {
+.container--catalog .folder--catalog > div > .container--item > .folder--item > a {
+  display: inline-block;
   width: 70%;
   height: 45px;
   background: #363535;
   margin-top: 200px;
 }
 
-.container--catalog .folder--catalog > div > .container--item > .folder--item > button > a {
+.container--catalog .folder--catalog > div > .container--item > .folder--item > a > button {
   color: #d1984e;
+  width: 100%;
+  height: inherit;
+  background: inherit;
   font-weight: bold;
   text-transform: uppercase;
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
 }
 
-.container--catalog .folder--catalog > div > .container--item > .folder--item > button > a:hover {
+.container--catalog .folder--catalog > div > .container--item > .folder--item > a > button:hover {
   color: #ffb85b;
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;

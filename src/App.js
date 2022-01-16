@@ -10,8 +10,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Featured from './components/Featured';
 import CategoryShow from './components/CategoryShow';
 import CartList from './components/CartList';
-import list from "./database/data"
+import list from "./database/ItemCollection"
 import { CustomProvider } from './components/CartContext';
+
 
 const App = () => {
   // eslint-disable-next-line

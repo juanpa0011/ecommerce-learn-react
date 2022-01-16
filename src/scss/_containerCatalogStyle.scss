@@ -131,13 +131,17 @@
                     justify-items: center;
                     align-items: center;
 
-                    >button {
+                    >a {
+                        display: inline-block;
                         width: 70%;
                         height: 45px;
                         background: $background--header;
                         margin-top: 200px;
-                        >a {
+                        >button {
                             color: $color--bronze--noactive;
+                            width: 100%;
+                            height: inherit;
+                            background: inherit;
                             font-weight: bold;
                             text-transform: uppercase;
                             transition: color 0.5s ease-out;

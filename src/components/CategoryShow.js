@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { NavLink, useParams } from "react-router-dom"
+import db from '../firebase/firebaseConfig';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 const CategoryShow = ({list}) => {
 
@@ -8,26 +10,33 @@ const CategoryShow = ({list}) => {
     const [items, setList] = useState([])
     const [loading, setloading] = useState(false)
 
-    useEffect(() => {
-        const promise = getItems()
-        promise.then((json) => {
-            setList(json);
-        })
-    }, [categoryType])
+    useEffect (() => {
 
-    const getItems = () => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                
-                resolve(
-                    list.filter(function (element) { 
-                        return element.category == categoryType.type
-                    })
-                )
-            }, 3000);
-        })
-        return promise;
-    }
+        const collectProducts = collection(db, "products");
+
+        if (categoryType) {
+            
+            const seekQuery = query(collectProducts,where("category","==",categoryType.type))
+            console.log(seekQuery)
+            getDocs(seekQuery)
+            .then(({docs}) => {
+                setList(docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+
+        } else {
+            getDocs(collectProducts)
+            .then(({docs}) => {
+                setList(docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+            
+    }, [categoryType]);
 
     let title = ""
 

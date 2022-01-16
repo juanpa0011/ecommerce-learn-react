@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import db from '../firebase/firebaseConfig';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 import { NavLink } from "react-router-dom";
 
@@ -8,34 +10,23 @@ const Featured = ({list, carting}) => {
     const [featured, setList] = useState([])
     const [loading, setloading] = useState(false)
 
-    useEffect(() => {
-        const promise = getItems()
-        promise.then((json) => {
-            setList(json);
-        })
-    }, [])
+    useEffect (() => {
 
-    const getItems = () => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(
-                    list.filter(function (element) { return element.featured == true})
-                )
-            }, 3000);
-        })
-        return promise;
-    }
+        const collectProducts = collection(db, "products");
+            
+        const seekQuery = query(collectProducts,where("featured","==",true))
 
-    const sliceItems = () => {
-        const randNum = Math.floor(Math.random() * 10);
-        if (randNum > 4) {
-            const twoFeatured = featured.slice(0,2);
-            return twoFeatured;
-        } else {
-            const twoFeatured = featured.slice(randNum,randNum+2);
-            return twoFeatured;
-        }
-    }
+        getDocs(seekQuery)
+        .then(({docs}) => {
+            setList(docs.map((doc) => ({id: doc.id, ...doc.data()})))
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
+        
+            
+    }, []);
     
     // Render all featured elements as intended
     return <>

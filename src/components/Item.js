@@ -13,7 +13,9 @@ const Item = (params) =>{
                 <p>{item.description.short}</p>
                 <h4>Price: ${item.price}</h4>
                 <div className="folder--item">
-                    <button>  <NavLink to ={itemLink} >Show more</NavLink> </button>
+                <NavLink to ={itemLink} >
+                    <button> Show more </button>
+                </NavLink>
                 </div>
             </div>
     </div>

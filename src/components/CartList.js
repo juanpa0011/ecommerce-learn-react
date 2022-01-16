@@ -1,10 +1,33 @@
 import { useEnviro } from "./CartContext";
-import list from "../database/data"
 import { NavLink } from 'react-router-dom';
+
+import db from '../firebase/firebaseConfig';
+import { collection, getDocs, setDoc, addDoc, serverTimestamp } from 'firebase/firestore';
+
 
 const CartList = () => {
 
     const {cart, removeItemCart, emptyCart} = useEnviro();
+
+    const endCheckOut = () => {
+        console.log("Saving check out on db...")
+
+        const collectionCheckOut = collection(db, "sales")
+        addDoc(collectionCheckOut, {
+            buyer: {
+                name: "Juan Perez",
+                email: "falsomail@españoleingles.com",
+                phone: "(+69)1576789813"
+            },
+            items: cart,
+            date: serverTimestamp(),
+            total: setSum()
+        })
+        .then((res) => {
+            console.log(res)
+            emptyCart();
+        })
+    }
 
     const setSum = () => {
         let aux = 0
@@ -68,7 +91,7 @@ const CartList = () => {
                     <button onClick={()=>emptyCart()}>CLEAR THE BACKPACK</button>
                     <div></div>
                     <h4>Sum: ${setSum()}</h4>
-                    <button>CONFIRM BUY</button>
+                    <button onClick={()=>endCheckOut()}>CONFIRM BUY</button>
                 </div>
             </div>
             )
