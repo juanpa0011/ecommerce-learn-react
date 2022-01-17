@@ -30,7 +30,7 @@ const Featured = ({list, carting}) => {
     
     // Render all featured elements as intended
     return <>
-        <h2>Featured Items of the Month</h2>
+        
         {featured.slice(0,2).map((element, index) => {
             return <div>
                 <img src={element.img}></img>

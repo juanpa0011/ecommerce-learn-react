@@ -8,8 +8,6 @@ const ItemList = (params) => {
 
     return <>
         <h2>Lurking around the store?</h2>
-        <button></button>
-        <button></button>
         <div className="folder--catalog">
             {list.map((item, index) => {
                 return <Item item={item}></Item>

@@ -59,13 +59,17 @@
 
         margin-top: 5px;
 
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, 250px);
         grid-template-rows: 1fr 1fr;
+
+        overflow-x: scroll;
+        scroll-behavior: auto;
+        scroll-behavior: smooth;
 
         padding: 10px 25px;
 
         >div {
-            width: 100%;
+            width: 250px;
             height: 100%;
             grid-row-start: 1;
             grid-row-end: -1;
@@ -177,8 +181,6 @@
         content: '<';
         grid-column-start: 1;
         grid-column-end: 2;
-        color: red;
-        text-align: center;
     }
     button:nth-child(2) {
         content: '>';

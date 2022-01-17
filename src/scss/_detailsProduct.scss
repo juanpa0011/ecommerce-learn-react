@@ -76,7 +76,7 @@
         grid-column-start: 1;
         grid-column-end: 2;
 
-        box-shadow: 2px 1px 10px black;
+        //box-shadow: 2px 1px 10px black;
 
         grid-row-start: 1;
         grid-row-end: 5;
@@ -164,6 +164,12 @@
         justify-self: center;
         align-self: center;
         text-align: center;
+
+        padding-top: 250px;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: bold;
+
         &:hover {
             color: $color--bronze--active;
             transition: color 1s ease-in-out;

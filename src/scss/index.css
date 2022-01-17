@@ -607,15 +607,18 @@ header nav > a > div div p {
   position: relative;
   gap: 10px;
   margin-top: 5px;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (250px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 250px);
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+  scroll-behavior: smooth;
   padding: 10px 25px;
 }
 
 .container--catalog .folder--catalog > div {
-  width: 100%;
+  width: 250px;
   height: 100%;
   -ms-grid-row: 1;
       grid-row-start: 1;
@@ -752,8 +755,6 @@ header nav > a > div div p {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
-  color: red;
-  text-align: center;
 }
 
 .container--catalog button:nth-child(2) {
@@ -860,26 +861,24 @@ header nav > a > div div p {
   margin-top: 50px;
 }
 
-.container--category-style > .container--central-grid > div .container--values > div > button {
+.container--category-style > .container--central-grid > div .container--values > div > a > button {
   background: #363535;
   height: 55px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-}
-
-.container--category-style > .container--central-grid > div .container--values > div > button:hover > a {
-  color: #ffb85b;
-  -webkit-transition: 0.5s ease-in color;
-  transition: 0.5s ease-in color;
-}
-
-.container--category-style > .container--central-grid > div .container--values > div > button > a {
   -webkit-transition: 0.5s ease-in color;
   transition: 0.5s ease-in color;
   font-weight: bold;
   text-transform: uppercase;
+  padding: 5px;
   color: #d1984e;
+}
+
+.container--category-style > .container--central-grid > div .container--values > div > a > button:hover {
+  color: #ffb85b;
+  -webkit-transition: 0.5s ease-in color;
+  transition: 0.5s ease-in color;
 }
 
 .ItemListed {
@@ -974,8 +973,6 @@ header nav > a > div div p {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
-  -webkit-box-shadow: 2px 1px 10px black;
-          box-shadow: 2px 1px 10px black;
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 5;
@@ -1084,6 +1081,10 @@ header nav > a > div div p {
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
+  padding-top: 250px;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .ItemListed .loading:hover {

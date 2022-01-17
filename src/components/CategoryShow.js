@@ -50,7 +50,6 @@ const CategoryShow = ({list}) => {
 
     return (
         <section className="container--category-style">
-            <h2>Welcome to {title}</h2>
             <div className="container--central-grid">
                 {/* mapping data from database (use promise as intended soon.) */}
                 {items.map((element, index) => {
@@ -63,7 +62,9 @@ const CategoryShow = ({list}) => {
                     <div className="container--values">
                         <p>Price: ${element.price}</p>
                         <div className="folder--item">
-                            <button>  <NavLink to ={'/product/' + element.id} >Show more</NavLink> </button>
+                        <NavLink to ={'/product/' + element.id} >
+                            <button>  Show more </button>
+                        </NavLink>
                         </div>
                     </div>
                 </div>

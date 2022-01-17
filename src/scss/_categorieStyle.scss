@@ -69,21 +69,19 @@
                 >div {
                     display: grid;
                     margin-top: 50px;
-                    >button {
+                    >a>button {
                         background: $background--header;
                         height: 55px;
                         align-self: center;
+                        transition: 0.5s ease-in color;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        padding: 5px;
+                        color: $color--bronze--noactive;
                         &:hover {
-                            >a {
-                                color: $color--bronze--active;
-                                transition: 0.5s ease-in color;
-                            }
-                        }
-                        >a {
+                            
+                            color: $color--bronze--active;
                             transition: 0.5s ease-in color;
-                            font-weight: bold;
-                            text-transform: uppercase;
-                            color: $color--bronze--noactive;
                         }
                     }
                 }
