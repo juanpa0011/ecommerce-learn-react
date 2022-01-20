@@ -46,10 +46,10 @@ const App = () => {
           <CartList/>
         } />
       </Routes>
+    </main>
     <footer>
       <p>D&D E-commerce for ReactJS project - 2021 - By Juan Pablo Sosa Epifani</p>
     </footer>
-    </main>
   </Router>
   </CustomProvider>
 
