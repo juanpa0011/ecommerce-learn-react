@@ -39,3 +39,18 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+footer {
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    background: $background--header;
+    color: $color--header--noactive;
+    z-index: 55;
+    padding: 0px 10%;
+    transition: color 1s ease-in-out;
+    &:hover {
+        color: $color--header--active;
+        transition: color 1s ease-in-out;
+    }
+}
