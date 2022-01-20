@@ -34,6 +34,15 @@ npm install
 npm start
 ```
 
+## Firebase
+
+> Firebase APIs and IDs are protected as .env.local information.
+> To simulate the items, create a collection called "products"
+> and estimulate it with the following "Obj" structure:
+```product {category:"digitaldice"/"sourcebook , featured:boolean, img:string, name:string,
+price:number, stock:number>0, description:map{full:string, short:string, h4:string, list:array}}
+```
+
 ## Author: 
 ```sh
 Juan Pablo Sosa Epifani || https://www.linkedin.com/notifications/
