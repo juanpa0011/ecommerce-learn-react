@@ -12,9 +12,9 @@ Coderhouse React JS course's resulting project.
 
 ## Design: 
 
-<img src="https://prnt.sc/26g8n0v" width="500"> 
-<img src="https://prnt.sc/26g8oug" width="500">
-<img src="https://prnt.sc/26g8pxz" width="500">
+Screenshot 1: https://prnt.sc/26g8n0v
+Screenshot 2: https://prnt.sc/26g8oug
+Screenshot 3: https://prnt.sc/26g8pxz
 
 ## Libraries: 
 
