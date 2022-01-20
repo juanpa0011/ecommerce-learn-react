@@ -76,7 +76,7 @@ const CartList = () => {
                     <h4>Actions</h4>
                 </div>
                 <div className="table--item">
-                    {cart.map(element => {
+                    {cartReady ? cart.map(element => {
                         return (<>
                         <NavLink to ={'/product/' + element.product.item.id} > 
                             <button>SHOW ITEM</button> 
@@ -91,7 +91,8 @@ const CartList = () => {
                         </div>
                         <button onClick={()=>removeItemCart(element.product.item.id, element.product.quantity)}>REMOVE</button>
                         </>)
-                    })}
+                    }) : <div className="loading">Loading...</div>
+                }
                 </div>
                 <div className="table--footer">
                     <button onClick={()=>emptyCart()}>CLEAR THE BACKPACK</button>
