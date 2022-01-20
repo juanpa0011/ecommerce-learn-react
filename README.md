@@ -16,7 +16,7 @@ Coderhouse React JS course's resulting project.
 > Screenshot ItemDetail: https://prnt.sc/26g8oug <br>
 > Screenshot CartView: https://prnt.sc/26g8pxz <br>
 > Screenshot CategoryView: https://prnt.sc/26g8x0r <br>
-> Screenshot Catalog-Main: https://prnt.sc/26g8xud 
+> Screenshot Catalog-Main: https://prnt.sc/26g9u8i 
 
 ## Libraries: 
 
