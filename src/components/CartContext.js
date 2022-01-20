@@ -1,36 +1,32 @@
 import { createContext, useContext } from 'react';
 import { useState } from 'react/cjs/react.development';
 
-const enviro = createContext({ cantidadTotal: 1, cart: []}); // Example of Context - Not being used.
+const enviro = createContext({ cantidadTotal: 1, cart: []}); 
 
-export const {Provider} = enviro; // Example of Provider - We have a custom Provider.
+export const {Provider} = enviro; 
 
-export const useEnviro = () => {  //Custom Hook
+export const useEnviro = () => {  
     return useContext(enviro)
 }
 
-export const CustomProvider = ({children}) => { // Being used currently as Context.
+export const CustomProvider = ({children}) => { 
     const [cartWeight, setCartWeight] = useState(0)
     const [cart, setCart] = useState([])
 
-    const removeItemCart = (id, quantity) => { // Remove item from cart - not cart weight. 
+    const removeItemCart = (id, quantity) => { 
         const cart_copy = cart.filter(element => element.product.item.id != id)
-        console.log(cart_copy)
-        console.log(id)
         setCart(cart_copy)
         setCartWeight(cartWeight - quantity)
 
     }
 
-    const emptyCart = () => { // Empty cart, all items removed. WARNING: CartWeight should also be affected.
+    const emptyCart = () => { 
         setCart([])
         setCartWeight(0)
     }
 
-    const addToCart = (product) => { // Element to add must come from a return statement.
+    const addToCart = (product) => { 
         const id = product.item.id;
-        //const exist = cart.find((element) => element.product.id == product.id);
-        console.log(cart)
         if (isInCart(id)) {
 
             const cart_copy = [...cart]
@@ -44,7 +40,7 @@ export const CustomProvider = ({children}) => { // Being used currently as Conte
         setCartWeight(cartWeight + product.quantity)
     }
     
-    const isInCart = (id) => { // Find item inside cart.
+    const isInCart = (id) => { 
         const search = cart.filter(x => x.product.item.id == id) 
         
         if (search.length > 0) {
@@ -62,7 +58,7 @@ export const CustomProvider = ({children}) => { // Being used currently as Conte
         emptyCart
     }
 
-    return ( // We are using a Custom Provider because of the custom hook, but we still need to state Provider.
+    return ( 
         <Provider value={contextValues} >
             {children}
         </Provider>

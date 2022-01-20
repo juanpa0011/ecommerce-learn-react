@@ -5,7 +5,7 @@ import ItemDetail from "./ItemDetail";
 import db from '../firebase/firebaseConfig';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
-const ItemDetailContainer = ({list}) => {
+const ItemDetailContainer = () => {
 
     const [item, setItem] = useState([])
     const [loading, setloading] = useState(false)
@@ -23,21 +23,6 @@ const ItemDetailContainer = ({list}) => {
             
             
     }, []);
-
-    /**
-     * 
-     const getItems = () => {
-         const promise = new Promise((resolve, reject) => {
-             setTimeout(() => {
-                 resolve(
-                     list.filter(function (element) { return element.id == productID.id})
-                 )
-             }, 2000);
-         })
-         return promise;
-     }
-     * 
-     */
 
     return (
         <section className="ItemListed">

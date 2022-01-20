@@ -26,9 +26,11 @@ const CartList = () => {
             total: setSum()
         })
         .then((res) => {
-            console.log(res)
             emptyCart();
             setCartReady(true)
+        })
+        .catch((err) => {
+            console.log(err)
         })
         }
     }

@@ -51,7 +51,6 @@ const CategoryShow = ({list}) => {
     return (
         <section className="container--category-style">
             <div className="container--central-grid">
-                {/* mapping data from database (use promise as intended soon.) */}
                 {items.map((element, index) => {
                     return <div>
                     <img src={element.img}></img>
@@ -75,9 +74,3 @@ const CategoryShow = ({list}) => {
 }
 
 export default CategoryShow;
-
-// Bundles -- Grid of Row primaries. Each Bundle divided in three sections. Img (left) Description (center) decorations (right)
-
-// SourceBooks --
-
-// Digital Dice --

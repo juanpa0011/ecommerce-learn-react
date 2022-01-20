@@ -5,7 +5,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { NavLink } from "react-router-dom";
 
 
-const Featured = ({list, carting}) => {
+const Featured = () => {
 
     const [featured, setList] = useState([])
     const [loading, setloading] = useState(false)
@@ -27,8 +27,6 @@ const Featured = ({list, carting}) => {
         
             
     }, []);
-    
-    // Render all featured elements as intended
     return <>
         
         {featured.slice(0,2).map((element, index) => {

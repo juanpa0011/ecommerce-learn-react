@@ -1,5 +1,3 @@
-// Catalog - Show all items from Item Container, map them in here.
-
 import Item from "./Item";
 
 const ItemList = (params) => {
@@ -9,7 +7,7 @@ const ItemList = (params) => {
     return <>
         <h2>Lurking around the store?</h2>
         <div className="folder--catalog">
-            {list.map((item, index) => {
+            {list.map((item) => {
                 return <Item item={item}></Item>
             })}
         </div>

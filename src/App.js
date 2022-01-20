@@ -10,13 +10,10 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Featured from './components/Featured';
 import CategoryShow from './components/CategoryShow';
 import CartList from './components/CartList';
-import list from "./database/ItemCollection"
 import { CustomProvider } from './components/CartContext';
 
 
 const App = () => {
-  // eslint-disable-next-line
-
   const links = [
     { href: '/category/bundles', name: "bundles", type: "bundles"},
     { href: '/category/sourcebook', name: "sourcebooks", type: "sourcebooks"},
@@ -32,21 +29,21 @@ const App = () => {
       <Routes>
         <Route path="/" element={<>
           <section section className="container--featured">
-            <Featured list={list}/>
+            <Featured />
           </section>
           <section className="container--catalog">
-            <ItemListContainer list={list}></ItemListContainer>
+            <ItemListContainer ></ItemListContainer>
           </section>
           </>
         }/>
         <Route path="/category/:type" element={
-          <CategoryShow list={list}></CategoryShow>
+          <CategoryShow ></CategoryShow>
         } />
         <Route path="/product/:id" element={
-          <ItemDetailContainer list={list}/>
+          <ItemDetailContainer />
         } />
         <Route path="/cart" element={
-          <CartList list={list}/>
+          <CartList/>
         } />
       </Routes>
     </main>
@@ -57,16 +54,3 @@ const App = () => {
 }
 
 export default App;
-
-/**
- * 
- * <section section className="container--featured">
-        <Featured/>
-      </section>
-      <section className="container--catalog">
-        <ItemListContainer></ItemListContainer>
-      </section>
-      <ItemListDetails></ItemListDetails>
-
-
- */
