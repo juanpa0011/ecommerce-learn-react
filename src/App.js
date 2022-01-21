@@ -22,6 +22,7 @@ const App = () => {
   return ( 
   <CustomProvider>
     <Router>
+      
     <header>
       <Navbar links={links}/> 
     </header>
@@ -43,8 +44,10 @@ const App = () => {
           <ItemDetailContainer />
         } />
         <Route path="/cart" element={
+          
           <CartList/>
         } />
+        
       </Routes>
     </main>
     <footer>

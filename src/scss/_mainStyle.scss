@@ -160,5 +160,13 @@ main {
         }
     }
 
+    >.Toastify {
+        position: absolute;
+        z-index: 60;
+        width: 200px;
+        height: 50px;
+        background-color: $background--header;
+    }
+
     // CATALOG OF DIVERSITY - SHOW UP TO 20 ITEMS ???
 }

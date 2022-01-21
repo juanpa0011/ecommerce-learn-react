@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 import db from '../firebase/firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const CartList = () => {
 
     const {cart, removeItemCart, emptyCart} = useEnviro();
     const [cartReady , setCartReady] = useState(true)
+    const [purchaseReady , setPurchaseReady] = useState("none")
 
     const endCheckOut = () => {
         if (cartReady) {
@@ -26,13 +27,18 @@ const CartList = () => {
             total: setSum()
         })
         .then((res) => {
-            emptyCart();
-            setCartReady(true)
+            setPurchaseReady(res.id)
         })
         .catch((err) => {
             console.log(err)
         })
         }
+    }
+
+    const confirmCheckOut = () => {
+        setPurchaseReady("none")
+        emptyCart();
+        setCartReady(true)
     }
 
     const setSum = () => {
@@ -44,9 +50,9 @@ const CartList = () => {
 
         return aux
     }
-
     if (cart.length == 0) {
         return (
+            <>
             <div className="container--cart">
                 <div className="table--header">
                     <div></div>
@@ -65,10 +71,17 @@ const CartList = () => {
                     <h4>Sum: $0.00</h4>
                 </div>
             </div>
+            </>
             )
     } else {
         return (
-            <div className="container--cart">
+            <>
+                {purchaseReady !== "none" ? <aside>
+                    <p>All done! Please, use this code to follow your purchase</p>
+                    <h5>{purchaseReady}</h5>
+                    <button onClick={() => confirmCheckOut()}>CONFIRM</button>
+                </aside> : null}
+                <div className="container--cart">
                 <div className="table--header">
                     <h4>Info</h4>
                     <h4>Products</h4>
@@ -95,12 +108,16 @@ const CartList = () => {
                 }
                 </div>
                 <div className="table--footer">
-                    <button onClick={()=>emptyCart()}>CLEAR THE BACKPACK</button>
+                    {cartReady ? <button onClick={()=>emptyCart()}>CLEAR THE BACKPACK</button> :
+                    <button disabled>CLEAR THE BACKPACK</button> }
                     <div></div>
                     <h4>Sum: ${setSum()}</h4>
-                    <button className="end--cart-sale" onClick={()=>endCheckOut()}>CONFIRM BUY</button>
+                    {cartReady ? <button className="end--cart-sale" onClick={()=>endCheckOut()}>CONFIRM BUY</button> :
+                    <button disabled className="end--cart-sale">WAIT</button> }
                 </div>
             </div>
+
+            </>
             )
     }
 }
