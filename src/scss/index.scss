@@ -55,31 +55,47 @@ footer {
     }
 }
 
-aside {
+.background--popup {
     position: absolute;
     display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    margin-left: 25%;
-    text-align: center;
-    padding: 8% 10%;
-    width: 50%;
-    height: 50%;
-    background: $background--header;
-    color: $color--header--active;
-    z-index: 100;
     justify-content: center;
     align-items: center;
-
-    >h5 {
-        margin: 10px 0px;
-    }
-    >button {
-        width: 70%;
-        background: $color--red--dnd;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 100;
+    aside {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 2px black solid;
+        padding-right: 15px;
+        width: 50%;
+        height: 50%;
+        background: url("https://www.wargamer.com/wp-content/uploads/2021/09/dnd-backgrounds-5e-anthropologist.jpg") no-repeat right;
         color: $color--header--active;
-        font-weight: bold;
-        font-size: 18px;
-        justify-self: center;
+        justify-content: center;
+        align-items: flex-end;
+        >h5 {
+            margin: 10px 55px;
+            background: black;
+            padding: 10px 20px;
+            letter-spacing: 2px;
+        }
+        >button {
+            width: 30%;
+            height: 35px;
+            background: $color--red--dnd;
+            color: $color--header--active;
+            margin-right: 85px;
+            border: 0px;
+            font-weight: bold;
+            font-size: 18px;
+            justify-self: center;
+            &:hover {
+                background: white;
+                color: $color--red--dnd;
+            }
+        }
     }
 }

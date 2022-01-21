@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import db from '../firebase/firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 
 const CartList = () => {
 
@@ -76,11 +75,13 @@ const CartList = () => {
     } else {
         return (
             <>
-                {purchaseReady !== "none" ? <aside>
+                {purchaseReady !== "none" ? 
+                <div className="background--popup">                
+                    <aside>
                     <p>All done! Please, use this code to follow your purchase</p>
                     <h5>{purchaseReady}</h5>
                     <button onClick={() => confirmCheckOut()}>CONFIRM</button>
-                </aside> : null}
+                </aside> </div> : null}
                 <div className="container--cart">
                 <div className="table--header">
                     <h4>Info</h4>
