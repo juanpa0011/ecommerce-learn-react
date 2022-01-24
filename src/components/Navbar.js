@@ -19,7 +19,7 @@ const Navbar = ({links}) => {
             <nav>
                 <ul>
                     {links.map((element, index) => {
-                        return <li><NavLink key={element.id} to={element.href}> {captalizeElementsString(element.name)} </NavLink></li>
+                        return <NavLink key={element.id} to={element.href}> <li> {captalizeElementsString(element.name)}</li> </NavLink>
                     })}
                 </ul>
                 <NavLink to='/cart'>

@@ -36,9 +36,11 @@ npm start
 
 ## Firebase
 
-> Firebase APIs and IDs are protected as .env.local information.
-> To simulate the items, create a collection called "products"
-> and estimulate it with the following "Obj" structure:
+
+> Firebase APIs and IDs are exposed on the firebaseConfig.js
+> they will be taken back as .env.local information for security reasons.
+> To simulate the items, create a collection called "products" after this change,
+> and estimulate the data base with the following "Obj" structure:
 ```
 product {category:"digitaldice"/"sourcebook" , featured:boolean, img:string, name:string, price:number, stock:number>0, description:map{full:string, short:string, h4:string, list:array}}
 ```
