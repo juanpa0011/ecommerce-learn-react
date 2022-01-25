@@ -18,6 +18,8 @@ Coderhouse React JS course's resulting project.
 > Screenshot CategoryView: https://prnt.sc/26g8x0r <br>
 > Screenshot Catalog-Main: https://prnt.sc/26g9u8i 
 
+![ Alt text](howtopurchase.gif) / ! [](howtopurchase.gif)
+
 ## Libraries: 
 
 | Libraries | Funcionalidad |
